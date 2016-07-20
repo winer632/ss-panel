@@ -168,6 +168,15 @@
                                                                 align="right" valign="top">{$user->unusedTraffic()}
                                                             </td>
                                                         </tr>
+                                                        <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
+                                                            <td style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; border-top-width: 1px; border-top-color: #eee; border-top-style: solid; margin: 0; padding: 5px 0;"
+                                                                valign="top">请联系QQ 181710174 购买流量
+                                                            </td>
+                                                            <td class="alignright"
+                                                                style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; vertical-align: top; text-align: right; border-top-width: 1px; border-top-color: #eee; border-top-style: solid; margin: 0; padding: 5px 0;"
+                                                                align="right" valign="top">10元2G 20元6G
+                                                            </td>
+                                                        </tr>
                                                     </table>
                                                 </td>
                                             </tr>

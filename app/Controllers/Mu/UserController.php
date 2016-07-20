@@ -10,6 +10,7 @@ use App\Services\Config;
 use App\Services\Logger;
 use App\Storage\Dynamodb\TrafficLog as DynamoTrafficLog;
 use App\Utils\Tools;
+use App\Services\Logger;
 
 class UserController extends BaseController
 {
@@ -37,6 +38,10 @@ class UserController extends BaseController
         $user = User::find($id);
 
         $user->t = time();
+        Logger::info("user->d is $user->d ");
+        Logger::info("d is $d ");
+        Logger::info("rate is $rate ");
+
         $user->u = $user->u + ($u * $rate);
         $user->d = $user->d + ($d * $rate);
         if (!$user->save()) {
