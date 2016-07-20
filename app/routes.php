@@ -9,6 +9,7 @@ use App\Middleware\Mu;
 use Slim\App;
 use Zeuxisoo\Whoops\Provider\Slim\WhoopsMiddleware;
 
+
 /***
  * The slim documents: http://www.slimframework.com/docs/objects/router.html
  */
@@ -132,6 +133,7 @@ $app->group('/mu', function () {
 $app->group('/res', function () {
     $this->get('/captcha/{id}', 'App\Controllers\ResController:captcha');
 });
+
 
 return $app;
 

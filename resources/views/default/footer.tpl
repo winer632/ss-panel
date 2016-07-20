@@ -3,17 +3,19 @@
 		<div class="row">
 			<div class="col l6 s12">
 				<h5 class="white-text">关于</h5>
-				<p class="grey-text text-lighten-4">本站提供某种帐号用于科学上网.</p>
-
+				<p class="grey-text text-lighten-4">沪ICP备16013826号</p>
+				<a class="grey-text text-lighten-4"  href="https://github.com/winer632?tab=repositories">作者：WangXinXin  邮箱：winer632@qq.com</a>
 
 			</div>
 			<div class="col l3 s12">
 				<h5 class="white-text">用户</h5>
 				<ul>
 				{if $user->isLogin}
+					<li><a class="white-text" href="http://pan.baidu.com/s/1eRMrzP4" target="_blank">使用帮助</a></li>
 					<li><a class="white-text" href="/user">用户中心</a></li>
 					<li><a class="white-text" href="/user/logout">退出</a></li>
 				{else}
+					<li><a class="white-text" href="http://pan.baidu.com/s/1eRMrzP4" target="_blank">使用帮助</a></li>
 					<li><a class="white-text" href="/auth/login">登录</a></li>
 					<li><a class="white-text" href="/auth/register">注册</a></li>
 				{/if}
@@ -30,7 +32,7 @@
 	</div>
 	<div class="footer-copyright">
 		<div class="container">
-			&copy; {$config["appName"]}  Powered by <a class="orange-text text-lighten-3" href="https://github.com/orvice/ss-panel">ss-panel</a> {$config["version"]}
+			&copy; {$config["appName"]}  Powered by <a class="orange-text text-lighten-3" href="https://github.com/winer632?tab=repositories">WangXinXin</a> {$config["version"]}
 		 Theme by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
 		</div>
 		<div style="display:none;">

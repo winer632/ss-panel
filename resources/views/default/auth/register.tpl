@@ -6,7 +6,7 @@
     </div>
 
     <div class="register-box-body">
-        <p class="login-box-msg">注册，然后变成一只猫。</p>
+        <p class="login-box-msg">注册即可获取免费shadowsocks账号密码。</p>
 
         <div class="form-group has-feedback">
             <input type="text" id="name" class="form-control" placeholder="昵称"/>
@@ -38,12 +38,12 @@
             <input type="password" id="repasswd" class="form-control" placeholder="重复密码"/>
             <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
         </div>
-
+<!--
         <div class="form-group has-feedback">
             <input type="text" id="code" value="{$code}" class="form-control" placeholder="邀请码"/>
             <span class="glyphicon glyphicon-send form-control-feedback"></span>
         </div>
-
+-->
         <div class="form-group has-feedback">
             <p>注册即代表同意<a href="/tos">服务条款</a></p>
         </div>
@@ -117,7 +117,7 @@
                 error: function (jqXHR) {
                     $("#msg-error").hide(10);
                     $("#msg-error").show(100);
-                    $("#msg-error-p").html("发生错误：" + jqXHR.status);
+                    $("#msg-error-p").html("发生错误1：" + jqXHR.status);
                 }
             });
         }
@@ -173,7 +173,7 @@
                 error: function (jqXHR) {
                     $("#msg-error").hide(10);
                     $("#msg-error").show(100);
-                    $("#msg-error-p").html("发生错误：" + jqXHR.status);
+                    $("#msg-error-p").html("发生错误2：" + jqXHR.status);
                     clearTimer();
                 }
             });

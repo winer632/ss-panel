@@ -36,7 +36,7 @@
                     <div class="box-header">
                         <i class="fa fa-exchange"></i>
 
-                        <h3 class="box-title">流量使用情况</h3>
+                        <h3 class="box-title">流量使用情况（剩余流量为负数时将无法上网，请看左边公告&FAQ）</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">

@@ -14,6 +14,7 @@ use App\Utils\Hash;
 use App\Utils\Http;
 use App\Utils\Tools;
 
+date_default_timezone_set("Asia/Shanghai");
 
 /**
  *  AuthController
@@ -100,7 +101,7 @@ class AuthController extends BaseController
 
         // check code
         $c = InviteCode::where('code', $code)->first();
-        if ($c == null) {
+        if ($c != null) {
             $res['ret'] = 0;
             $res['error_code'] = self::WrongCode;
             $res['msg'] = "邀请码无效";
@@ -148,6 +149,13 @@ class AuthController extends BaseController
 
         // check ip limit
         $ip = Http::getClientIP();
+        if($ip=="59.172.176.122"){//added by wangxx 20160622
+            $res['ret'] = 0;
+            $res['msg'] = '武汉的兄弟，您就缺10元钱买点流量吗？请联系QQ 181710174 充值';
+            return $this->echoJson($response, $res);
+        }
+
+
         $ipRegCount = Check::getIpRegCount($ip);
         if ($ipRegCount >= Config::get('ipDayLimit')) {
             $res['ret'] = 0;
@@ -168,12 +176,18 @@ class AuthController extends BaseController
         $user->transfer_enable = Tools::toGB(Config::get('defaultTraffic'));
         $user->invite_num = Config::get('inviteNum');
         $user->reg_ip = Http::getClientIP();
-        $user->ref_by = $c->user_id;
+        $user->reg_date = date("Y-m-d H:i:s");
+        //$user->ref_by = $c->user_id;
 
         if ($user->save()) {
+	        	if($ip=="116.228.89.198"){//added by wangxx 20160622
+	            $res['ret'] = 1;
+	            $res['msg'] = '欢迎上海粱江的兄弟注册，不缺钱的金主，欢迎花10元钱买点流量~请联系QQ 181710174 充值';
+	            return $this->echoJson($response, $res);
+	        	}
             $res['ret'] = 1;
             $res['msg'] = "注册成功";
-            $c->delete();
+            //$c->delete();
             return $this->echoJson($response, $res);
         }
         $res['ret'] = 0;
@@ -181,8 +195,14 @@ class AuthController extends BaseController
         return $this->echoJson($response, $res);
     }
 
+
+
+
     public function sendVerifyEmail($request, $response, $args)
     {
+    		ini_set("log_errors", 1);
+				ini_set("error_log", "/tmp/php-error.log");
+
         $res = [];
         $email = $request->getParam('email');
 
@@ -207,6 +227,7 @@ class AuthController extends BaseController
             $res['msg'] = '验证代码已发送至您的邮箱，请在登录邮箱后将验证码填到相应位置.';
             return $this->echoJson($response, $res);
         }
+        error_log( "Hello, 5555555555!" );
         $res['ret'] = 0;
         $res['msg'] = '邮件发送失败，请联系管理员';
         return $this->echoJson($response, $res);
